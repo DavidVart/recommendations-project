@@ -4,7 +4,7 @@ The objective of this repository is to serve as a template for machine learning 
 
 ## Getting Started
 
-To set up the project, the easiest way is to copy the all the folders into an empty GitHub repository. Make sure you change the name of the library `miguellib`.
+To set up the project, the easiest way is to copy the all the folders into an empty GitHub repository. Make sure you change the name of the library `jorgelib`.
 
 ## Structure
 
@@ -17,7 +17,7 @@ To set up the project, the easiest way is to copy the all the folders into an em
 ## Setup
 
     pip install -e .
-    python -c "import miguellib; print(miguellib.__version__)"
+    python -c "import jorgelib; print(jorgelib.__version__)"
 
 ## Coding Principles
 
