@@ -109,7 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-recom-project/
+recom-project-win/
+recom-project-mac/
 
 # Spyder project settings
 .spyderproject
