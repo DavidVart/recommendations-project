@@ -1,0 +1,6 @@
+numpy>=1.19
+pandas<2,>1.0.3
+ipykernel<7,>=4.6.1
+jupyter<2,>=1
+black<21,>=18.6b4
+pytest>=3.6.4
