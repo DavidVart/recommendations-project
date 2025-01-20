@@ -1,0 +1,3 @@
+from .core.chat_ai import ChatAI
+
+__all__ = ['ChatAI'] 
