@@ -1,47 +1,103 @@
-# Machine Learning project template
+# Fiscozen ChatAI 🤖
 
-The objective of this repository is to serve as a template for machine learning projects.
+An intelligent chat system that seamlessly transitions between AI assistance, customer service, and tax advisory services.
 
-## Getting Started
+## 🌟 Features
 
-To set up the project, the easiest way is to copy the all the folders into an empty GitHub repository. Make sure you change the name of the library `jorgelib`.
+- **Smart Routing**: Automatically directs conversations to:
+  - AI Assistant for general queries
+  - Customer Service representatives for complex cases
+  - Tax Advisors for tax-related matters
 
-## Structure
+- **Recommendation System**: Uses Microsoft's Recommenders library to:
+  - Provide contextual responses
+  - Suggest relevant information
+  - Learn from conversation patterns
 
-- .github: CI/CD with GitHub Actions. It runs the tests every time there is a pull request to the repository.
-- docs: Documentation of the project.
-- examples: Jupyter notebooks with machine learning experiments. Here is where you would do data exploration, try different machine learning models, etc.
-- jorgelib: Libraries with common functions that you use in the project. 
-- tests: Python tests of the libraries.
+- **Modern UI**: Built with Streamlit for:
+  - Clean, responsive interface
+  - Real-time updates
+  - Easy interaction
 
-## Setup
+## 🚀 Getting Started
 
-    pip install -e .
-    python -c "import jorgelib; print(jorgelib.__version__)"
+### Prerequisites
 
-## Coding Principles
+- Python 3.8+
+- pip package manager
 
-Next there are a few coding principles that I follow when working on machine learning projects.
+### Installation
 
-### Start from something that works
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd recommendations-project
+```
 
-Here is one of the most practical tips I know about working on machine learning. **Instead of starting from scratch, start with something that works and adapt it to your problem.**
+2. Set up the UI environment:
+```bash
+python -m venv venv-ui
+source venv-ui/bin/activate  # On Windows: venv-ui\Scripts\activate
+pip install -r requirements-ui.txt
+pip install -e .
+```
 
-For example, let's say you want to build a recommendation system with data from your company. What I would do is something as simple as this:
+3. Set up the recommender service environment:
+```bash
+python -m venv venv-recommender
+source venv-recommender/bin/activate  # On Windows: venv-recommender\Scripts\activate
+pip install -r requirements-recommender.txt
+pip install -e .
+```
 
-1. Go to [Recommenders](https://github.com/recommenders-team/recommenders) and look at an example that a similar dataset structure and compute. For example, if your data is text-based and you want to use GPU, explore the examples of LSTUR or NPA.
-2. Install the dependencies and run the example. Make sure that it works.
-3. Change the data of the example to your data. If your data is different or more extensive, just forget about it and use the part of your data that is similar to the example. Make sure that it works.
-4. Change the code to adapt it to your specific data and problem.
+### Running the Application
 
-### Notebooks that call a library
+1. Start the recommender service (in the recommender environment):
+```bash
+python run_recommender.py
+```
 
-One of the main differences between a professional and an amateur machine learning project is this. Don't put your functions and classes in the notebooks, instead, create libraries and call them from the notebooks. This is the only way to reuse your code and make it scalable. 
+2. In a new terminal, start the UI (in the UI environment):
+```bash
+python run_chat.py
+```
 
-Most of the time, notebooks are not deployed, they are used for experimentation and visualization. You deploy the libraries. In addition, if you create libraries, you can test them.
+The chat interface will be available at `http://localhost:8501`
 
-### Why tests are important?
+## 🏗️ Project Structure
 
-Tests solve one of the most expensive problems in development: maintenance. The way I see testing is like the immune system of your project. It protects your project from bugs and errors and makes sure your project is healthy. 
+```
+jorgelib/
+├── ui/                 # Chat interface
+├── recommender_service/# FastAPI service
+├── models/            # Recommendation models
+├── datasets/          # Data handling
+├── routing/           # Conversation routing
+└── chat/             # Core chat logic
+```
 
-A strong test pipeline minimizes maintenance. It is one of the best investments you can do in your project, because it will avoid new buggy code in the project, and it will detect breaking changes when using dependencies.
+## 🛠️ Development
+
+- The project uses two separate environments to handle dependency conflicts
+- UI runs on port 8501 (Streamlit)
+- Recommender service runs on port 8000 (FastAPI)
+- All code changes in `jorgelib/` are immediately reflected due to development installation
+
+## 📚 Technologies Used
+
+- [Streamlit](https://streamlit.io/) - UI Framework
+- [Microsoft Recommenders](https://github.com/microsoft/recommenders) - Recommendation Engine
+- [FastAPI](https://fastapi.tiangolo.com/) - API Framework
+- [pandas](https://pandas.pydata.org/) - Data Processing
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
