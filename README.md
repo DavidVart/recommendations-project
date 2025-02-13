@@ -30,7 +30,7 @@ An intelligent chat system that seamlessly transitions between AI assistance, cu
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:DavidVart/recommendations-project.git
 cd recommendations-project
 ```
 
